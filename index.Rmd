@@ -1,0 +1,23 @@
+---
+title: "Digital edition of _Le Roman de Silence_ (verses 2439-2688)"
+subtitle: "Last updated: `r Sys.time()`"
+author: "Loren Lee"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::tufte_html_book: default
+---
+
+# Hello World
+
+```{r setup, echo=FALSE}
+library(tufte)
+
+#hide all future R code chunks from output
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+Hi.
+
+There's about to be some R up in here: `r margin_note("This is a margin note")` and then there was no more R
