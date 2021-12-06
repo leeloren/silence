@@ -1,0 +1,73 @@
+# Old Translations
+
+
+
+```{r setup, echo=FALSE, message=FALSE}
+library(tufte)
+library(tidyverse)
+library(knitr)
+
+
+knitr::opts_chunk$set(
+  #hide all future R code chunks from output
+  echo = FALSE,
+  #hide all future messages
+  message = FALSE)
+```
+
+
+Hi.
+
+There's about to be some R up in here: `r margin_note("This is a margin note")`
+
+and then there was no more R `r margin_note("A new note?")`
+
+```{r store_text}
+
+df_translations <- read_csv("FREN 8510 McGrady Silence Translations - Sheet1.csv", 
+                            col_types = cols(.default = "c")) %>% 
+  mutate(across(.cols = c(Line, `My translation`, Notes), 
+                ~ifelse(is.na(.), "", .)))
+
+# df_translations <- tibble(
+#   Line_all = c(2439:2444),
+#   `Roche-Mahdi (2007) OF Edition` = c(
+#     "Quant l’enfes est de tel doctrine",
+#     "Qu’il entent bien qu’il est mescine,",
+#     "Ses pere l’a mis a raison,",
+#     "Se li demostre l’oquoison",
+#     "Por que on le coile si et cuevre.",
+#     "“Se li rois Ebayns seüst l’uevre"
+#   ),
+#   `Psaki (1991) Translation` = c(
+#     "When the child had learned enough",
+#     "to understand that he was a girl,",
+#     "his father had a talk with him,",
+#     "and told him the reason",
+#     "they concealed and hid him.",
+#     "“If King Ebain knew what"
+#     
+#   ),
+#   Notes = c("",
+#             "Here's a note",
+#             "",
+#             "",
+#             "",
+#             "")
+# ) %>%
+#   mutate(Line = case_when((Line_all + 1 )%% 5 == 0 ~ as.character(Line_all),
+#                           TRUE ~ "")) 
+
+```
+
+
+
+```{r translation_table}
+kable(
+  df_translations %>% 
+    select(Line, `Psaki (1991) Translation`, `Roche-Mahdi (2007) OF Edition`, Notes)
+  )
+
+```
+
+
