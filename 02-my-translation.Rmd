@@ -1,8 +1,6 @@
 # A New Translation of verses 2439-2688
 
-TBD!!!!!
-
-Test if I can use this same table??
+My translation attempts to account for the polysemous words in this passage of _Silence_. Where appropriate, I have taken etymologies into account. I welcome the reader's comments to improve this project.
 
 ```{r}
 df_translations_mine <- df_translations %>% 
@@ -19,7 +17,7 @@ df_translations_mine <- df_translations %>%
   select(-Notes)
 
 kable(df_translations_mine, 
-      caption = "Here's a caption", 
+      # caption = "Here's a caption", 
       #escape = FALSE needed so explicit HTML in table will render as HTML
       escape = FALSE)
 
