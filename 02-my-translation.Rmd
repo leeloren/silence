@@ -5,6 +5,23 @@ TBD!!!!!
 Test if I can use this same table??
 
 ```{r}
-kable(df_translations %>% select(Line, `My Translation`, Notes))
+df_translations_mine <- df_translations %>% 
+    select(Line, `Roche-Mahdi (2007) OF Edition`, `My Translation`, Notes) %>%
+  mutate(
+    #convert notes to margin notes (only when there is something in the Notes column, otherwise leave blank)
+    Notes = case_when(
+      Notes != "" ~ margin_note(Notes),
+      TRUE ~ ""
+      ),
+    #paste the margin notes to the last column
+    `My Translation` = paste(`My Translation`, Notes)) %>% 
+  #remove notes column
+  select(-Notes)
+
+kable(df_translations_mine, 
+      caption = "Here's a caption", 
+      #escape = FALSE needed so explicit HTML in table will render as HTML
+      escape = FALSE)
+
 ```
 

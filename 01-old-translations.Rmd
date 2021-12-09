@@ -25,38 +25,13 @@ and then there was no more R `r margin_note("A new note?")`
 ```{r store_text}
 
 df_translations <- read_csv("FREN 8510 McGrady Silence Translations - Sheet1.csv", 
-                            col_types = cols(.default = "c")) %>% 
+                            col_types = cols(.default = "c",
+                                             Line = col_integer())) %>% 
   mutate(across(.cols = c(Line, `My Translation`, Notes), 
-                ~ifelse(is.na(.), "", .)))
-
-# df_translations <- tibble(
-#   Line_all = c(2439:2444),
-#   `Roche-Mahdi (2007) OF Edition` = c(
-#     "Quant l’enfes est de tel doctrine",
-#     "Qu’il entent bien qu’il est mescine,",
-#     "Ses pere l’a mis a raison,",
-#     "Se li demostre l’oquoison",
-#     "Por que on le coile si et cuevre.",
-#     "“Se li rois Ebayns seüst l’uevre"
-#   ),
-#   `Psaki (1991) Translation` = c(
-#     "When the child had learned enough",
-#     "to understand that he was a girl,",
-#     "his father had a talk with him,",
-#     "and told him the reason",
-#     "they concealed and hid him.",
-#     "“If King Ebain knew what"
-#     
-#   ),
-#   Notes = c("",
-#             "Here's a note",
-#             "",
-#             "",
-#             "",
-#             "")
-# ) %>%
-#   mutate(Line = case_when((Line_all + 1 )%% 5 == 0 ~ as.character(Line_all),
-#                           TRUE ~ "")) 
+                ~ifelse(is.na(.), "", .))) %>% 
+  rename(Line_all = Line) %>%
+  mutate(Line = case_when((Line_all + 1 )%% 5 == 0 ~ as.character(Line_all),
+                          TRUE ~ ""))
 
 ```
 
@@ -64,20 +39,10 @@ df_translations <- read_csv("FREN 8510 McGrady Silence Translations - Sheet1.csv
 
 ```{r}
 
-df_translations_test <- df_translations %>% 
-    select(Line, `Psaki (1991) Translation`, `Roche-Mahdi (2007) OF Edition`, Notes) %>%
-  mutate(
-    #convert notes to margin notes (only when there is something in the Notes column, otherwise leave blank)
-    Notes = case_when(
-      Notes != "" ~ margin_note(Notes),
-      TRUE ~ ""
-      ),
-    #paste the margin notes to the last column
-    `Roche-Mahdi (2007) OF Edition` = paste(`Roche-Mahdi (2007) OF Edition`, Notes)) %>% 
-  #remove notes column
-  select(-Notes)
+df_translations_old <- df_translations %>% 
+    select(Line, `Psaki (1991) Translation`, `Roche-Mahdi (2007) Translation`)
 
-kable(df_translations_test, 
+kable(df_translations_old, 
       caption = "Here's a caption", 
       #escape = FALSE needed so explicit HTML in table will render as HTML
       escape = FALSE)
