@@ -1,4 +1,4 @@
-# Old Translations
+# Comparing Psaki (1991) and Roche-Mahdi (2007)
 
 
 
@@ -26,7 +26,7 @@ and then there was no more R `r margin_note("A new note?")`
 
 df_translations <- read_csv("FREN 8510 McGrady Silence Translations - Sheet1.csv", 
                             col_types = cols(.default = "c")) %>% 
-  mutate(across(.cols = c(Line, `My translation`, Notes), 
+  mutate(across(.cols = c(Line, `My Translation`, Notes), 
                 ~ifelse(is.na(.), "", .)))
 
 # df_translations <- tibble(
@@ -62,11 +62,26 @@ df_translations <- read_csv("FREN 8510 McGrady Silence Translations - Sheet1.csv
 
 
 
-```{r translation_table}
-kable(
-  df_translations %>% 
-    select(Line, `Psaki (1991) Translation`, `Roche-Mahdi (2007) OF Edition`, Notes)
-  )
+```{r}
+
+df_translations_test <- df_translations %>% 
+    select(Line, `Psaki (1991) Translation`, `Roche-Mahdi (2007) OF Edition`, Notes) %>%
+  mutate(
+    #convert notes to margin notes (only when there is something in the Notes column, otherwise leave blank)
+    Notes = case_when(
+      Notes != "" ~ margin_note(Notes),
+      TRUE ~ ""
+      ),
+    #paste the margin notes to the last column
+    `Roche-Mahdi (2007) OF Edition` = paste(`Roche-Mahdi (2007) OF Edition`, Notes)) %>% 
+  #remove notes column
+  select(-Notes)
+
+kable(df_translations_test, 
+      caption = "Here's a caption", 
+      #escape = FALSE needed so explicit HTML in table will render as HTML
+      escape = FALSE)
+
 
 ```
 

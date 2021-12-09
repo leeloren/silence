@@ -1,3 +1,10 @@
-# My translation
+# A New Translation of verses 2439-2688
 
 TBD!!!!!
+
+Test if I can use this same table??
+
+```{r}
+kable(df_translations %>% select(Line, `My Translation`, Notes))
+```
+
