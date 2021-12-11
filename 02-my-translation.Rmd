@@ -19,7 +19,8 @@ df_translations_mine <- df_translations %>%
 kable(df_translations_mine, 
       # caption = "Here's a caption", 
       #escape = FALSE needed so explicit HTML in table will render as HTML
-      escape = FALSE)
+      escape = FALSE) %>% 
+  kableExtra::column_spec(2, width = "6cm")
 
 ```
 
