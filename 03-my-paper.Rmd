@@ -1,5 +1,4 @@
-# Translation Trouble in Le Roman de Silence: A Test Case in Digital Editing for Polysemy
+# 
 
-(coming soon)
 <!-- There's about to be some R up in here: `r margin_note("This is a margin note")` -->
 

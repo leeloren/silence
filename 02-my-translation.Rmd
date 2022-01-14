@@ -1,6 +1,6 @@
 # A New Translation of verses 2439-2688
 
-My translation attempts to account for the polysemous words in this passage of _Silence_. Where appropriate, I have taken etymologies into account. I welcome the reader's comments to improve this project.
+My translation attempts to account for the polysemous words in this passage of _Silence_. Where appropriate, I have taken etymologies into account. I welcome the reader's contributions to improve this project.
 
 ```{r}
 df_translations_mine <- df_translations %>% 
