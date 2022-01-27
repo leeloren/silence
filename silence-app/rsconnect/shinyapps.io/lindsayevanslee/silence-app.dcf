@@ -1,0 +1,12 @@
+name: silence-app
+title: silence-app
+username:
+account: lindsayevanslee
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5503613
+bundleId: 5516410
+url: https://lindsayevanslee.shinyapps.io/silence-app/
+when: 1643326531.78495
+asMultiple: FALSE
+asStatic: FALSE
