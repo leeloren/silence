@@ -1,0 +1,9 @@
+# App test
+
+&nbsp;
+
+```{r}
+knitr::include_app("https://lindsayevanslee.shinyapps.io/silence-app/",
+  height = "600px")
+```
+
