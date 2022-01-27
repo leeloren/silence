@@ -1,4 +1,0 @@
-# 
-
-<!-- There's about to be some R up in here: `r margin_note("This is a margin note")` -->
-
