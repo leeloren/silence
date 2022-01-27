@@ -8,7 +8,14 @@ df_translations_mine <- df_translations %>%
   mutate(
     #convert notes to margin notes (only when there is something in the Notes column, otherwise leave blank)
     Notes = case_when(
-      Notes != "" ~ margin_note(Notes),
+      Notes != "" ~ margin_note(paste0(
+        #paste the manicule to the margin note
+        '<img src="manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; margin-left: -10%" /> ',
+                                       Notes),
+        # icon = "&#9756;"
+        #make the icon to expand the margin note when the window is narrow also a manicule
+        icon = '<img src="manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; " />'
+        ),
       TRUE ~ ""
       ),
     #paste the margin notes to the last column
@@ -21,6 +28,7 @@ kable(df_translations_mine,
       #escape = FALSE needed so explicit HTML in table will render as HTML
       escape = FALSE) %>% 
   kableExtra::column_spec(2, width = "6cm")
+
 
 ```
 
