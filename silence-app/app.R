@@ -69,6 +69,7 @@ server <- function(input, output) {
         df() %>% 
             #select relevant columns
             select(all_of(c(
+                "Line_all",
                 "Line",
                 "Roche-Mahdi (2007) OF Edition",
                 "My Translation" = input$button,
@@ -78,15 +79,9 @@ server <- function(input, output) {
             mutate(
                 #convert notes to margin notes (only when there is something in the Notes column, otherwise leave blank)
                 Notes = case_when(
-                    # Notes != "" ~ margin_note(paste0(
-                    #     #paste the manicule to the margin note
-                    #     '<img src="manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; margin-left: -10%" /> ',
-                    #     Notes),
-                    #     # icon = "&#9756;"
-                    #     #make the icon to expand the margin note when the window is narrow also a manicule
-                    #     icon = '<img src="manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; " />'
-                    # ),
                     Notes != "" ~ paste0(
+                        #create label
+                        '<label for="tufte-mn-', Line_all, '" class="margin-toggle"><img src="manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; "></label><input type="checkbox" id="tufte-mn-', Line_all, '" class="margin-toggle">',
                         #open span with manicule
                         '<span class="marginnote"><img src="manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; margin-left: -10%">',
                         Notes,
@@ -99,7 +94,7 @@ server <- function(input, output) {
                 #paste the margin notes to the last column
                 `My Translation` = paste(`My Translation`, Notes)) %>% 
             #remove notes column
-            select(-Notes)
+            select(-Line_all, -Notes)
         
         },
         sanitize.text.function = function(x) x)
