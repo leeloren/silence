@@ -22,11 +22,11 @@ ui <- fluidPage(
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
-            sliderInput("bins",
-                        "Spectrum:",
-                        min = 1,
-                        max = 100,
-                        value = 50)
+            radioButtons("button",
+                        "What do you want to prioritize in the translation?",
+                        choices = c("Meaning" = "My Translation",
+                                    "Syntax" = "Word Order Priority Translation",
+                                    "Sound" = "Sound Priority Translation"))
         ),
 
         # Show a plot of the generated distribution
@@ -36,27 +36,38 @@ ui <- fluidPage(
     )
 )
 
-# Define server logic required to draw a histogram
+# Define server logic
 server <- function(input, output) {
     
     df <- reactive({
         
-        test <- tribble(
-            ~ Line, ~ Original, ~ start_val, ~ end_val, ~Translation,
-            "1", "C'est un petit peu du francien", 1, 30, "It's French",
-            "1", "C'est un petit peu du francien", 31, 45, "It's a little French",
-            "1", "C'est un petit peu du francien", 46, 89, "It's a little bit of French",
-            "1", "C'est un petit peu du francien", 90, 100, "It's a little bit of Old French"
-        )
+        df_translations <- read_csv("FREN 8510 McGrady Silence Translations - Sheet1.csv", 
+                                            col_types = cols(.default = "c",
+                                                             Line = col_integer())) %>% 
+            #make rows with Notes empty strings
+            mutate(across(.cols = c(Notes, `Sound Priority Translation Notes`), 
+                          ~ifelse(is.na(.), "", .))) %>%
+            #fill in Word Order Priority Translation with My Translation
+            mutate(`Word Order Priority Translation` = case_when(
+                is.na(`Word Order Priority Translation`) ~ `My Translation`,
+                TRUE ~ `Word Order Priority Translation`
+            )) %>% 
+            #create line numbers that only appear every 5th row
+            rename(Line_all = Line) %>%
+            mutate(Line = case_when((Line_all + 1 )%% 5 == 0 ~ as.character(Line_all),
+                                    TRUE ~ ""))
         
-        return(test)
+        return(df_translations)
     })
 
     output$text <- renderTable(
         df() %>% 
-            filter(input$bins >= df()$start_val,
-                   input$bins <= df()$end_val) %>% 
-            select(-start_val, -end_val)
+            select(all_of(c(
+                "Line",
+                "Roche-Mahdi (2007) OF Edition",
+                input$button
+            )
+            ))
     )
 }
 
