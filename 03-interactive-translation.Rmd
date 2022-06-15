@@ -2,6 +2,10 @@
 
 &nbsp;
 
+Translators are always making choices for their audiences. Normally, these choices are made invisible to facilitate a smoother reading experience, but this practice can give readers the false impression that what they are enjoying is an unmediated "true" expression of the original text. By allowing readers to make translation choices themselves, the complexity and playfulness of texts like _Le Roman de Silence_ may be more fully appreciated.
+
+On this page, you decide.
+
 ```{r}
 knitr::include_app("https://lindsayevanslee.shinyapps.io/silence-app/",
   height = "600px")

@@ -16,7 +16,9 @@ knitr::opts_chunk$set(
 ```
 
 
-Psaki elaborates on her and Roche-Mahdi's translation styles in her article "Verse versus poetry: translating medieval narrative verse" (2007).
+Here, you can compare the previous verse translations of this passage by Regina Psaki and Sarah Roche-Mahdi. Florence Bouchet has also produced a complete translation of _Le Roman de Silence_ into Modern French (Bouchet 2000), but her translation has not been included here because it is written in prose. 
+
+Notice the different translation choices that Psaki and Roche-Mahdi make. For example when Nature addresses Silence, the language of the text is ambiguous enough that each translator can choose different pronouns and gendered terms to refer to Silence (see especially vv. 2500-2501, 2539, & 2542-2546). Psaki elaborates on her and Roche-Mahdi's translation styles in her article "Verse versus poetry: translating medieval narrative verse" (2007).
 
 <!-- There's about to be some R up in here: `r margin_note("This is a margin note")` -->
 

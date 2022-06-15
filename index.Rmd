@@ -7,6 +7,7 @@ documentclass: book
 output:
   bookdown::tufte_html_book: 
     css: tufte_updates.css
+    split_by: chapter
 ---
 
 # Abstract {-}

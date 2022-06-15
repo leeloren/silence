@@ -1,0 +1,119 @@
+# Bibliography
+
+## **Reference Texts** {.unlisted .unnumbered}
+
+_Anglo-Norman Dictionary (AND2 Online Edition)_, Aberystwyth University, 2021. <https://anglo-norman.net/>.
+
+Bryan, Jennifer. _Happy Git and GitHub for the useR_. The STAT 545 TAs, 2019.
+
+_Dictionnaire du Moyen Français_, version 2020 (DMF 2020). ATILF - CNRS & Université de Lorraine. <http://www.atilf.fr/dmf>.
+
+Godefroy, Frédéric. _Dictionnaire de l’ancienne langue française, et de tous ses dialectes du IX^e^ au XV^e^ siècle_. F. Vieweg, 1881. 
+
+Heldris de Cornuälle. _Le Roman de Silence_, translated by Regina Psaki, Garland, 1991.\
+---. “Le Roman de Silence.” translated by Florence Bouchet. _Récits d'amour et de chevalerie, xiii^e^–xv^e^ siècle_, edited by Robert Laffont, Bouquins, 2000.\
+---. _Silence: A Thirteenth-Century French Romance_, edited and translated by Sarah Roche-Mahdi, Michigan State University Press, 2007.\
+---. _Le roman de Silence: A thirteenth-century Arthurian verse-romance by Heldris de Cornuälle_, edited by Lewis Thorpe, Heffer, 1972.
+
+Kibler, William W. _An Introduction to Old French_. The Modern Language Association of America, 1984.
+
+Matsumura, Takeshi, and Michel Zink, editor. _Dictionnaire du français médiéval_. Les Belles Lettres, 2015. 
+
+Morawski, Joseph. _Proverbes français antérieurs au XVe siècle_. É. Champion, 1925.
+
+Simpson, D. P., editor. _Cassell’s New Latin Dictionary: Latin-English, English-Latin_. Funk & Wagnalls, 1959.
+
+Xie, Yihui. _bookdown: Authoring Books and Technical Documents with R Markdown_. Chapman & Hall, 2021.
+
+---
+
+## **_Silence_ Scholarship** {.unlisted .unnumbered}
+
+Akbari, Suzanne Conklin. “Nature’s Forge Recast in the Roman de Silence.” _Literary Aspects of Courtly Culture: Selected Papers from the Seventh Triennial Congress of the International Courtly Literature Society. University of Massachusetts, Amherst, U.S.A., 27 July - 1 August 1992_., D.S. Brewer, 1994, pp. 39–46.
+
+Allen, Peter. “The Ambiguity of Silence: Gender, Writing and Le Roman de Silence.” Julian N. Wasserman and Lois Roney, editors. _Sign, Sentence, Discourse_. Syracuse University Press, 1989. pp. 98-112.
+
+Barr, Jessica. “The Idea of the Wilderness: Gender and Resistance in Le Roman de Silence.” _Arthuriana_, vol. 30, no. 1, 2020, pp. 3–25, <https://doi.org/10.1353/art.2020.0000>.
+
+Bloch, Howard R. “Silence and Holes: The Roman de Silence and the Art of the Trouvère.” _Yale French Studies_, no. 70, Jan. 1986. JSTOR Journals, <https://doi.org/10.2307/2929850>.\
+---. “The Economics of Romance.” _Etymologies and Genealogies_. University of Chicago Press, 1983, pp. 159-197.
+
+Blumreich, Kathleen M. “Lesbian Desire in the Old French Roman de Silence.” _Arthuriana_, vol. 7, no. 1, 1997, pp. 47–62.
+
+Bolduc, Michelle. “Images of Romance: The Miniatures of Le Roman de Silence.” _Arthuriana_, vol. 12, no. 1, 2002, pp. 101–12, <https://doi.org/10.1353/art.2002.0067>.
+
+Bouchet, Florence. “L’écriture androgyne: Le travestissement dans Le Roman de Silence.” _Le nu et le vêtu au Moyen Age (XIIe-XIIIe Siècles): Actes du 25e colloque du CUER MA, 2-3-4 Mars 2000_, CUERMA, 2001, pp. 47–58.
+
+Brahney, Kathleen J. “When Silence was Golden: Female Personae in the Roman de Silence.” _The Spirit of the Court: Selected Proceedings of the Fourth Congress of the International Courtly Literature Society_ (Toronto 1983), edited by Glyn S. Burgess, Robert A. Taylor, Alan Deyermond, Dennis Green, and Beryl Rowland, D.S. Brewer, 1985, pp. 52-61.
+
+Burr, Kristin L. “Nurturing Debate in Le Roman de Silence.” _Founding Feminisms in Medieval Studies: Essays in Honour of E. Jane Burns_, D.S. Brewer, 2016, pp. 33–44.
+
+Callahan, Christopher. “Canon Law, Primogeniture, and the Marriage of Ebain and Silence.” _Romance Quarterly_, vol. 49, no. 1, 2002, pp. 12–20, <https://doi.org/10.1080/08831150209600881>.
+
+Campbell, Emma. “Translating Gender in Thirteenth-Century French Cross-Dressing Narratives: La Vie de Sainte Euphrosine and Le Roman de Silence.” _Journal of Medieval and Early Modern Studies_, vol. 49, no. 2, 2019, pp. 233–64, <https://doi.org/10.1215/10829636-7506510>.
+
+Clark, Robert L.A. “Queering Gender and Naturalizing Class in the _Roman de Silence_.” _Arthuriana_, vol. 12, no. 1, Spring 2002, pp. 50-63, <https://doi.org/10.1353/art.2002.0081>.
+
+Cooper, Kate Mason. “Elle and L: Sexualized Textuality in ‘Le Roman de Silence.’” _Romance Notes_, vol. 25, no. 3, University of North Carolina at Chapel Hill for its Department of Romance Studies, 1985, pp. 341–60.
+
+Cowper, Frederick A. G. “Origins and Peregrinations of the Laval-Middleton Manuscript.” _Nottingham Medieval Studies_, 1959. pp. 3-18.
+
+Gaunt, Simon. “The Significance of Silence.” _Paragraph_, vol. 13, no. 2, Edinburgh University Press, 1990, pp. 202–16.
+
+Hess, Erika E. “Inheritance Law and Gender Identity in the Roman de Silence.” _Law and Sovereignty in the Middle Ages and the Renaissance_, Brepols, 2011, pp. 217–35, <https://doi.org/10.1484/M.ASMAR-EB.1.100012>.
+
+Jewers, Caroline. “The Non-Existent Knight: Adventure in Le Roman de Silence.” _Arthuriana_, vol. 7, no. 1, 1997, pp. 87–110.
+
+Keene, Katie. “‘Cherchez Eufeme’: The Evil Queen in Le Roman de Silence.” _Arthuriana_, vol. 14, no. 3, 2004, pp. 3–22, <https://doi.org/10.1353/art.2004.0084>.
+
+Khan, Robert Omar. “Genealogy and Cross-Gendering in Le Roman de Silence and Ariake No Wakare (Parting at Dawn).” _Arthuriana_, vol. 12, no. 1, 2002, pp. 76–84, <https://doi.org/10.1353/art.2002.0035>.
+
+Kinoshita, Sharon. “Male-Order Brides: Marriage, Patriarchy, and Monarchy in the ‘Roman de Silence.’” _Arthuriana_, vol. 12, no. 1, Apr. 2002.
+
+Krause, Kathy. “Material Signs? Gendered Birthmarks in Old French Narrative.” _English Language Notes_, vol. 53, no. 2, 2015, pp. 75–88.
+
+Labbie, Erin F. “The Specular Image of the Gender-Neutral Name: Naming Silence in Le Roman de Silence.” _Arthuriana_, vol. 7, no. 1, 1997, pp. 63–77.
+
+Lecoy, Félix. “Corrections: Le Roman de Silence d’Heldris de Cornualle.” _Romania_, vol. 99, no. 393, Persée - Portail des revues scientifiques en SHS, 1978, pp. 109–25, <https://doi.org/10.3406/roma.1978.1913>.
+
+Lloyd, Heather. “The Triumph of Pragmatism: Reward and Punishment in The Roman de Silence.” Varty, Kenneth, et al. _Rewards and Punishments in the Arthurian Romances and Lyric Poetry of Mediaeval France_. D.S. Brewer, 1987. pp.77-88.
+
+McCracken, Peggy. “‘The Boy Who Was a Girl’: Reading Gender in the Roman de Silence.” _Romanic Review: A Journal Devoted to the Study of Romance Literature_, vol. 85, no. 4, 1994, pp. 517–36.
+
+Newman, Barbara. “Did Goddesses Empower Woman? The Case of Dame Nature.” _Gendering the Master Narrative: Women and Power in the Middle Ages_, Cornell University Press, 2003, pp. 135–55.
+
+Perret, Michèle. “Travesties et transsexuelles: Yde, Silence, Grisandole, Blanchandine.” _Romance Notes_, vol. 25, no. 3, University of North Carolina at Chapel Hill for its Department of Romance Studies, 1985, pp. 328–40.
+
+Pratt, Karen. “Humour in the Roman de Silence.” _Arthurian Literature, XIX: Comedy in Arthurian Literature_, D.S. Brewer, 2003, pp. 87–103, <https://www.cambridge.org/core/books/abs/arthurian-literature-xix/humour-in-the-roman-de-silence/02FD0AF72178656EF472359574263262>.
+
+Psaki, F. Regina. “The Modern Editor and Medieval ‘Misogyny’: Text Editing and Le Roman de Silence.” _Arthuriana_, vol. 7, no. 1, 1997, pp. 78–86.\
+---. “Verse versus Poetry: Translating Medieval Narrative Verse.” _The Medieval Translator / Traduire Au Moyen Age_, 10, Brepols, 2007, pp. 419–33, <https://doi.org/10.1484/M.TMT-EB.3.2265>.
+
+Ramey, Lynn, et al. “Revisioning the Global Middle Ages: Immersive Environments for Teaching Medieval Languages and Culture.” _Digital Philology: A Journal of Medieval Cultures_, vol. 8, no. 1, Johns Hopkins University Press, 2019, pp. 86–104. _Project MUSE_, <https://doi.org/10.1353/dph.2019.0016>.
+
+Stock, Lorraine Kochanske. “The Importance of Being Gender ‘Stable’: Masculinity and Feminine Empowerment in Le Roman de Silence.” _Arthuriana_, vol. 7, no. 1, 1997, pp. 7–34.
+
+Terrell, Katherine H. “Competing Gender Ideologies and the Limitations of Language in Le Roman de Silence.” _Romance Quarterly_, vol. 55, no. 1, 2008, pp. 35–48, <https://doi.org/10.3200/RQTR.55.1.35-48>.
+
+Victorin, Patricia. “Le nu et le vêtu dans le Roman de Silence : métaphore de l’opposition entre _nature_ et _norreture_.” _Le nu et le vêtu au Moyen Age (XIIe-XIIIe Siècles): Actes du 25e colloque du CUER MA, 2-3-4 Mars 2000_, CUERMA, 2001, pp. 365-382.
+
+Waters, Elizabeth A. “The Third Path: Alternative Sex, Alternative Gender in Le Roman de Silence.” _Arthuriana_, vol. 7, no. 1, 1997, pp. 35–46.
+
+---
+
+## **Other Relevant Scholarship** {.unlisted .unnumbered}
+
+Bamford, Heather, and Emily C. Francomano. “On Digital-Medieval Manuscript Culture: A Tentative Manifesto.” _Digital Philology: A Journal of Medieval Cultures_, vol. 7, no. 1, Johns Hopkins University Press, 2018, pp. 29–45. _Project MUSE_, <https://doi.org/10.1353/dph.2018.0002>.
+
+Boyle, Jennifer and Helen J. Burgess. _The Routledge Research Companion to Digital Medieval Literature_. Routledge, 2018.
+
+Leet, Elizabeth S. _Communicating With Horses: Women As Equestrians In 12th - Through 14th - Century Old French, Anglo-Norman and Middle English Literature_. 2016 University of Virginia, PhD dissertation. <https://doi.org/10.18130/V3PZ86>.
+
+Ramey, Lynn, et al. “Revisioning the Global Middle Ages: Immersive Environments for Teaching Medieval Languages and Culture.” _Digital Philology: A Journal of Medieval Cultures_, vol. 8, no. 1, 2019, pp. 86-104, <http://muse.jhu.edu/article/729807>.
+
+Schultz, James A. “Heterosexuality as a Threat to Medieval Studies.” _Journal of the History of Sexuality_, vol. 15, no. 1, Jan. 2006, pp. 14-29, <https://doi.org/10.1353/sex.2006.0060>.
+
+Shoshana Felman. “Rereading Femininity.” _Yale French Studies_, no. 62, Jan. 1981, pp. 19- 44, <https://doi.org/10.2307/2929892>.
+
+Treharne, Elaine. “Fleshing Out the Text: The Transcendent Manuscript in the Digital Age.” _Postmedieval: A Journal of Medieval Cultural Studies_, vol. 4, no. 4, 2013, pp. 465-478.
+
