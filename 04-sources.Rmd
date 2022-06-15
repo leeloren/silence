@@ -1,4 +1,4 @@
-# Bibliography
+# Bibliography {-}
 
 ## **Reference Texts** {.unlisted .unnumbered}
 
@@ -117,3 +117,12 @@ Shoshana Felman. “Rereading Femininity.” _Yale French Studies_, no. 62, Jan.
 
 Treharne, Elaine. “Fleshing Out the Text: The Transcendent Manuscript in the Digital Age.” _Postmedieval: A Journal of Medieval Cultural Studies_, vol. 4, no. 4, 2013, pp. 465-478.
 
+---
+
+## **Images** {.unlisted .unnumbered}
+
+**Margin image cropped from:**\
+_The Author Hearing the Story of Gillion de Trazegnies_ in _Romance of Gillion de Trezegnies_, 1464, Lieven van Lathem, illuminator, and David Aubert, scribe. Tempera colors, gold, and ink on parchment, 15 5/16 x 11 in. The J. Paul Getty Museum, MS 111, folio 9. Accessed via <https://blogs.getty.edu/iris/medieval-manuscripts-alive-middle-french/>.
+
+**Manicule adapted from:**\
+Terence, Terentius cum tribus cotilde;mentis: uidelicet Io. Cal[phurnii] Gvido. Iv[venalis] Donatus. Mediolani, Impressum est per I.A. Scinzenzeler, [Impensis] I. de Legnano, 1501. Image courtesy of Thomas Fisher Rare Book Library, University of Toronto. <http://drc.usask.ca/projects/archbook/manicules.php>.
