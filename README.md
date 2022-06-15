@@ -11,3 +11,5 @@ In this repository, I will build a prototype for such a digital edition.
 - Abstract
 - Comparing Psaki (1991) and Roche-Mahdi (2007)
 - A New Translation of verses 2439-2688
+- Interactive Translation
+
