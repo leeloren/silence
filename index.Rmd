@@ -17,3 +17,6 @@ Since at least its first edition produced by Lewis Thorpe in 1972, Le Roman de S
 In this book, I will build a prototype for such a digital edition.
 
 
+## Acknowledgements {.unlisted .unnumbered}
+
+Many thanks to my dissertation committee for their ongoing encouragement and criticism, and I am forever indebted to my sister and in-home tech support Lindsay Lee.
