@@ -15,23 +15,23 @@ ui <- fluidPage(
     tags$head(
         tags$link(rel = "stylesheet", type = "text/css", href = "tufte_shiny.css")
     ),
-
+    
     # Application title
     # titlePanel("This is a title"),
-
+    
     # Sidebar with a slider input for number of bins 
     sidebarLayout(
         sidebarPanel(
             radioButtons("button",
-                        "What do you want to prioritize in the translation?",
-                        choices = c("Meaning" = "My Translation",
-                                    "Syntax" = "Word Order Priority Translation",
-                                    "Sound" = "Sound Priority Translation"))
+                         "What do you want to prioritize in the translation?",
+                         choices = c("Meaning" = "My Translation",
+                                     "Syntax" = "Word Order Priority Translation",
+                                     "Sound" = "Sound Priority Translation"))
         ),
-
+        
         # Show a plot of the generated distribution
         mainPanel(
-           tableOutput("text")
+            tableOutput("text")
         )
     )
 )
@@ -42,8 +42,8 @@ server <- function(input, output) {
     df <- reactive({
         
         df_translations <- read_csv("FREN 8510 McGrady Silence Translations - Sheet1.csv", 
-                                            col_types = cols(.default = "c",
-                                                             Line = col_integer())) %>% 
+                                    col_types = cols(.default = "c",
+                                                     Line = col_integer())) %>% 
             #make rows with Notes empty strings
             mutate(across(.cols = c(Notes, `Sound Priority Translation Notes`), 
                           ~ifelse(is.na(.), "", .))) %>%
@@ -59,15 +59,31 @@ server <- function(input, output) {
         
         return(df_translations)
     })
-
+    
     output$text <- renderTable(
-        df() %>% 
-            select(all_of(c(
-                "Line",
-                "Roche-Mahdi (2007) OF Edition",
-                input$button
-            )
-            ))
+        
+        if (input$button == "Sound Priority Translation") {
+            
+            df() %>% 
+                select(all_of(c(
+                    "Line",
+                    "Roche-Mahdi (2007) OF Edition",
+                    "My Translation" = input$button,
+                    "Notes" = "Sound Priority Translation Notes"
+                )
+                ))
+            
+        } else {
+            df() %>% 
+                select(all_of(c(
+                    "Line",
+                    "Roche-Mahdi (2007) OF Edition",
+                    "My Translation" = input$button,
+                    "Notes"
+                )
+                ))
+        }
+        
     )
 }
 
