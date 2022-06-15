@@ -16,8 +16,4 @@ Since at least its first edition produced by Lewis Thorpe in 1972, Le Roman de S
 
 In this book, I will build a prototype for such a digital edition.
 
-<!-- margin image source: https://blogs.getty.edu/iris/medieval-manuscripts-alive-middle-french/ -->
-
-<!-- manicule source: Detail from Terence, Terentius cum tribus cotilde;mentis: uidelicet Io. Cal[phurnii] Gvido. Iv[venalis] Donatus. Mediolani, Impressum est per I.A. Scinzenzeler, [Impensis] I. de Legnano: 1501. Image courtesy of Thomas Fisher Rare Book Library, University of Toronto. http://drc.usask.ca/projects/archbook/manicules.php (edited by Lindsay in photoshop) -->
-
 
