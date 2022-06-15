@@ -60,31 +60,49 @@ server <- function(input, output) {
         return(df_translations)
     })
     
-    output$text <- renderTable(
+    output$text <- renderTable({
         
-        if (input$button == "Sound Priority Translation") {
-            
-            df() %>% 
-                select(all_of(c(
-                    "Line",
-                    "Roche-Mahdi (2007) OF Edition",
-                    "My Translation" = input$button,
-                    "Notes" = "Sound Priority Translation Notes"
-                )
-                ))
-            
-        } else {
-            df() %>% 
-                select(all_of(c(
-                    "Line",
-                    "Roche-Mahdi (2007) OF Edition",
-                    "My Translation" = input$button,
-                    "Notes"
-                )
-                ))
-        }
+        #choose correct column for margin notes
+        if (input$button == "Sound Priority Translation") notes_column_name <- "Sound Priority Translation Notes"
+        else notes_column_name <- "Notes"
         
-    )
+        df() %>% 
+            #select relevant columns
+            select(all_of(c(
+                "Line",
+                "Roche-Mahdi (2007) OF Edition",
+                "My Translation" = input$button,
+                "Notes" = notes_column_name
+            )
+            )) %>% 
+            mutate(
+                #convert notes to margin notes (only when there is something in the Notes column, otherwise leave blank)
+                Notes = case_when(
+                    # Notes != "" ~ margin_note(paste0(
+                    #     #paste the manicule to the margin note
+                    #     '<img src="manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; margin-left: -10%" /> ',
+                    #     Notes),
+                    #     # icon = "&#9756;"
+                    #     #make the icon to expand the margin note when the window is narrow also a manicule
+                    #     icon = '<img src="manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; " />'
+                    # ),
+                    Notes != "" ~ paste0(
+                        #open span with manicule
+                        '<span class="marginnote"><img src="manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; margin-left: -10%">',
+                        Notes,
+                        #close span
+                        "</span>"
+                        )
+                    ,
+                    TRUE ~ ""
+                ),
+                #paste the margin notes to the last column
+                `My Translation` = paste(`My Translation`, Notes)) %>% 
+            #remove notes column
+            select(-Notes)
+        
+        },
+        sanitize.text.function = function(x) x)
 }
 
 # Run the application 
