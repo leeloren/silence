@@ -1,0 +1,33 @@
+project:
+  type: book
+
+book:
+  title: "Digital edition of _Le Roman de Silence_ (verses 2439-2688)"
+  subtitle: "Last updated: `!r Sys.time()`"
+  author: "Loren Lee"
+  reader-mode: true
+  sidebar:
+    search: false
+    border: false
+    background: "none"
+  chapters:
+    - index.qmd
+    - old-translations.qmd
+    - my-translation.qmd
+    - interactive-translation.qmd
+    - references.qmd
+  knitr:
+    opts_chunk:
+      echo: false
+      message: false
+
+format:
+  html:
+    css: tufte_updates.css
+    toc: false
+  pdf:
+    documentclass: scrreprt
+    
+    
+    
+    
