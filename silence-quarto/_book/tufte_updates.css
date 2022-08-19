@@ -1,12 +1,19 @@
 /* Import ET Book styles
    adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
 
+/*
+WISHLIST:
+- center content in middle of page and have sidebar fill in only the space in the left margin and table margins fill in the right margin
+*/
+
+
 @charset "UTF-8";
 
 /* attempting to alter quarto classes*/
 
-#quarto-sidebar { /*change background of sidebar*/
+#quarto-sidebar { /*change background of sidebar, and set width to inherit the container's width*/
   background-color: #fffff8;
+  width: inherit;
 }
 
 #quarto-document-content { /*change padding on main body of text*/
@@ -32,13 +39,22 @@ a.sidebar-item-text.sidebar-link.active { /*remove coloring of link in sidebar f
   
 }
 
+h2, .h2 { /*remove underline for h2*/
+    border-bottom: none;
+}
+
+#quarto-header { /*fix collapsed header so it is the same width as the content and centered over the content*/
+  width: 78%;
+  margin: auto;
+}
+
+
 /* Tufte CSS styles */
 html { font-size: 12px; }
 
-body { width: 87.5%;
+body { width: 78%;
        margin-left: auto;
        margin-right: auto;
-       /*padding-left: 12.5%; */
        color: #111;
        max-width: 1400px;
        counter-reset: sidenote-counter; 
@@ -46,7 +62,7 @@ body { width: 87.5%;
        background-position: left 0 top 0, right 0 top 0;
        background-repeat: repeat-y;
        background-attachment: fixed;
-       background-size: 11%;
+       background-size: 11%, 11% ;
 }
 
 h1.title { font-weight: 400;
