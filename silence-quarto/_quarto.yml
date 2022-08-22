@@ -16,10 +16,6 @@ book:
     - my-translation.qmd
     - interactive-translation.qmd
     - references.qmd
-  knitr:
-    opts_chunk:
-      echo: false
-      message: false
 
 format:
   html:
