@@ -48,6 +48,15 @@ h2, .h2 { /*remove underline for h2*/
   margin: auto;
 }
 
+#title-block-header.quarto-title-block.default .quarto-title-meta-heading { /*remove margin for now-empty title metadata element that used to contain "AUTHOR" label*/
+  margin-top: 0;
+}
+
+p.subtitle.lead { /*remove margin under subtitle*/
+  margin-bottom: 0;
+  width: 100%;
+}
+
 
 /* Tufte CSS styles */
 html { font-size: 12px; }

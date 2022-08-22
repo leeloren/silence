@@ -25,6 +25,7 @@ format:
   html:
     css: tufte_updates.css
     toc: false
+    author-title: ""
   pdf:
     documentclass: scrreprt
     
