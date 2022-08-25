@@ -9,6 +9,7 @@ WISHLIST:
 
 :root { /*create some variables*/
   --manuscript-background-color: #fffff8;
+  --link-selection-color: #b4d5fe;
   --body-width: 78%;
   --p-width: 75%;
 }
@@ -210,11 +211,11 @@ a:link {
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) { a:link { background-position-y: 87%, 87%, 87%; } }
 
-a:link::selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-                    background: #b4d5fe; }
+a:link::selection { text-shadow: 0.03em 0 var(--link-selection-color), -0.03em 0 var(--link-selection-color), 0 0.03em var(--link-selection-color), 0 -0.03em var(--link-selection-color), 0.06em 0 var(--link-selection-color), -0.06em 0 var(--link-selection-color), 0.09em 0 var(--link-selection-color), -0.09em 0 var(--link-selection-color), 0.12em 0 var(--link-selection-color), -0.12em 0 var(--link-selection-color), 0.15em 0 var(--link-selection-color), -0.15em 0 var(--link-selection-color);
+                    background: var(--link-selection-color); }
 
-a:link::-moz-selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-                         background: #b4d5fe; }
+a:link::-moz-selection { text-shadow: 0.03em 0 var(--link-selection-color), -0.03em 0 var(--link-selection-color), 0 0.03em var(--link-selection-color), 0 -0.03em var(--link-selection-color), 0.06em 0 var(--link-selection-color), -0.06em 0 var(--link-selection-color), 0.09em 0 var(--link-selection-color), -0.09em 0 var(--link-selection-color), 0.12em 0 var(--link-selection-color), -0.12em 0 var(--link-selection-color), 0.15em 0 var(--link-selection-color), -0.15em 0 var(--link-selection-color);
+                         background: var(--link-selection-color); }
 
 /* Sidenotes, margin notes, figures, captions */
 img {max-width: 100%;}
