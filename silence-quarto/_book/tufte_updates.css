@@ -9,7 +9,7 @@ WISHLIST:
 
 :root { /*create some variables*/
   --manuscript-background-color: #fffff8;
-  --link-selection-color: #b4d5fe;
+  --link-selection-color: #1964bf;
   --body-width: 78%;
   --p-width: 75%;
 }
@@ -43,6 +43,11 @@ a:link.sidebar-item-text { /*remove line in background that looks like an underl
 
 a.sidebar-item-text.sidebar-link.active { /*remove coloring of link in sidebar for current page*/
   color: inherit;
+  
+}
+
+a.sidebar-item-text.sidebar-link.active:hover { /*make active page link hover color the same as the others*/
+  color: var(--link-selection-color);
   
 }
 
@@ -84,6 +89,10 @@ p.subtitle.lead { /*remove margin under subtitle*/
 
 .cell-output-display:not(.no-overflow-x) { /*allow margin notes to overflow the bounding box*/
   overflow-x: visible;
+}
+
+.nav-page a:hover { /*set hover link color for navigation at bottom of page*/
+  color: var(--link-selection-color);
 }
 
 /* Tufte CSS styles */
@@ -197,6 +206,8 @@ div.figure {
 /* Links: replicate underline that clears descenders */
 a:link, a:visited { color: inherit; }
 
+
+
 a:link { 
   text-decoration: none;
           /*comment out the background here to remove the line that appears under links*/
@@ -216,6 +227,12 @@ a:link::selection { text-shadow: 0.03em 0 var(--link-selection-color), -0.03em 0
 
 a:link::-moz-selection { text-shadow: 0.03em 0 var(--link-selection-color), -0.03em 0 var(--link-selection-color), 0 0.03em var(--link-selection-color), 0 -0.03em var(--link-selection-color), 0.06em 0 var(--link-selection-color), -0.06em 0 var(--link-selection-color), 0.09em 0 var(--link-selection-color), -0.09em 0 var(--link-selection-color), 0.12em 0 var(--link-selection-color), -0.12em 0 var(--link-selection-color), 0.15em 0 var(--link-selection-color), -0.15em 0 var(--link-selection-color);
                          background: var(--link-selection-color); }
+                         
+a:hover { /*set hover link color*/
+  color: var(--link-selection-color);
+}
+
+
 
 /* Sidenotes, margin notes, figures, captions */
 img {max-width: 100%;}
