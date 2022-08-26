@@ -54,7 +54,9 @@ Notice the different translation choices that Psaki and Roche-Mahdi make. For ex
 kable(df_translations_old, 
       # caption = "Here's a caption", 
       #escape = FALSE needed so explicit HTML in table will render as HTML
-      escape = FALSE)
+      escape = FALSE) %>% 
+  #setting column width--really only needed so that the same table style is applied here as on the next page. not sure why
+  kableExtra::column_spec(2, width = "6cm")
 
 
 ```

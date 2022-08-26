@@ -5,11 +5,14 @@
 WISHLIST:
 - center content in middle of page and have sidebar fill in only the space in the left margin and table margins fill in the right margin
 - fix text when screen is resized narrow
+- make table shading more manuscripty: no shading, just cell borders (pencil)
+- show borders on border of main section
 */
 
 :root { /*create some variables*/
   --manuscript-background-color: #fffff8;
   --link-selection-color: #1964bf;
+  --border-color: #B6C5CD;
   --body-width: 78%;
   --p-width: 75%;
 }
@@ -23,9 +26,12 @@ WISHLIST:
   width: inherit;
 }
 
-#quarto-document-content { /*change padding on main body of text*/
+#quarto-document-content { /*change padding on main body of text, add vertical borders*/
   padding-right: 14px;
   padding-left: 14px;
+  border-width: 1px;
+  border-style: none solid;
+  border-color: var(--border-color);
 }
 
 .list-unstyled.mt-1 { /*change the width of the items in the sidebar*/
@@ -84,6 +90,11 @@ p.subtitle.lead { /*remove margin under subtitle*/
 
 .table { /*make table width match content width*/
   width: var(--p-width);
+}
+
+tr {
+  border-color: var(--border-color);
+  border-width: 1px 0px;
 }
 
 
@@ -180,7 +191,7 @@ li { padding: 0.5rem 0; }
 table {
   border-top: 2px solid #111;
   border-bottom: 2px solid #111;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 th {
