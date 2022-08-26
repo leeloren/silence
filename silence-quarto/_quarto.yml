@@ -5,7 +5,7 @@ book:
   title: "Digital edition of _Le Roman de Silence_ (verses 2439-2688)"
   subtitle: "Last updated: `!r Sys.time()`"
   author: "Loren Lee"
-  reader-mode: true
+  reader-mode: false
   sidebar:
     search: false
     border: false
