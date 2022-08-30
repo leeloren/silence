@@ -4,9 +4,7 @@
 /*
 WISHLIST:
 - center content in middle of page and have sidebar fill in only the space in the left margin and table margins fill in the right margin
-- fix text when screen is resized narrow
-- make table shading more manuscripty: no shading, just cell borders (pencil)
-- show borders on border of main section
+- fix size of dropdown menu when screen is narrow
 */
 
 :root { /*create some variables*/
@@ -75,18 +73,19 @@ p.subtitle.lead { /*remove margin under subtitle*/
   width: 100%;
 }
 
-@media { /*set columns in underlying grid to be the same as on the front page to artificially squash the TOC*/
-  body.floating .page-columns { 
-  grid-template-columns: [screen-start] 1.5em [screen-start-inset] 5fr [page-start] 50px [page-start-inset] minmax(50px, 150px) [body-start-outset] 50px [body-start] 1.5em [body-content-start] minmax(500px, calc(800px - 3em)) [body-content-end] 1.5em [body-end body-end-outset page-end-inset page-end] 5fr [screen-end-inset] 1.5em [screen-end];
-}
-}
 
-@media { /*set columns again for body class so that screen can be resized without text spilling into the margin on non-front page => works on its own, but then the TOC sidebar is too large again*/
+
+@media (min-width: 992px) { /*make grid column spacing same as on front page to artificially squash TOC, for wider screens*/
   body .page-columns { 
   grid-template-columns: [screen-start] 1.5em [screen-start-inset] 5fr [page-start] 50px [page-start-inset] minmax(50px, 150px) [body-start-outset] 50px [body-start] 1.5em [body-content-start] minmax(500px, calc(800px - 3em)) [body-content-end] 1.5em [body-end body-end-outset page-end-inset page-end] 5fr [screen-end-inset] 1.5em [screen-end];
 }
 }
 
+@media (min-width: 992px) { /*repeat for more specific body.floating class so that text doesn't spill over the right margin*/
+  body.floating .page-columns { 
+  grid-template-columns: [screen-start] 1.5em [screen-start-inset] 5fr [page-start] 50px [page-start-inset] minmax(50px, 150px) [body-start-outset] 50px [body-start] 1.5em [body-content-start] minmax(500px, calc(800px - 3em)) [body-content-end] 1.5em [body-end body-end-outset page-end-inset page-end] 5fr [screen-end-inset] 1.5em [screen-end];
+}
+}
 
 .table { /*make table width match content width*/
   width: var(--p-width);
