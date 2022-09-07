@@ -13,8 +13,13 @@ Translators are always making choices for their audiences. Normally, these choic
 
 On this page, you decide.
 
-```{r}
-knitr::include_app("https://lindsayevanslee.shinyapps.io/silence-app/",
-  height = "600px")
-```
+
+
+
+
+
+<!-- ```{r} -->
+<!-- knitr::include_app("https://lindsayevanslee.shinyapps.io/silence-app/", -->
+<!--   height = "600px") -->
+<!-- ``` -->
 
