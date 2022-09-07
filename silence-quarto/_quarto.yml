@@ -3,7 +3,7 @@ project:
 
 book:
   title: "Digital edition of _Le Roman de Silence_ (verses 2439-2688)"
-  subtitle: "Last updated: `!r Sys.time()`"
+  subtitle: "Last updated: `r Sys.Date()`"
   author: "Loren Lee"
   reader-mode: false
   sidebar:
