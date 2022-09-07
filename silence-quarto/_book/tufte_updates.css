@@ -3,7 +3,6 @@
 
 /*
 WISHLIST:
-- center content in middle of page and have sidebar fill in only the space in the left margin and table margins fill in the right margin
 - fix size of dropdown menu when screen is narrow
 */
 
@@ -12,7 +11,7 @@ WISHLIST:
   --link-selection-color: #1964bf;
   --border-color: #B6C5CD;
   --body-width: 78%;
-  --p-width: 75%;
+  --p-width: 100%;
 }
 
 @charset "UTF-8";
@@ -255,7 +254,8 @@ img {max-width: 100%;}
 
 .sidenote, .marginnote { float: right;
                          clear: right;
-                         margin-right: -70%;
+                         margin-right: calc(var(--body-width) * -1);
+                         padding-left: 5%;
                          width: 70%;
                          margin-top: 0;
                          margin-bottom: 1rem;
@@ -327,7 +327,7 @@ label.sidenote-number { display: inline; }
 
 label.margin-toggle:not(.sidenote-number) { display: none; }
 
-@media (max-width: 760px) { label.margin-toggle:not(.sidenote-number) { display: inline; }
+@media (max-width: 1194px) { label.margin-toggle:not(.sidenote-number) { display: inline; }
                             .sidenote, .marginnote { display: none; }
                             .shownote,
                             .margin-toggle:checked + .sidenote,
