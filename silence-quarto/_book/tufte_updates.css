@@ -73,17 +73,21 @@ p.subtitle.lead { /*remove margin under subtitle*/
   width: 100%;
 }
 
-
-
-@media (min-width: 992px) { /*make grid column spacing same as on front page to artificially squash TOC, for wider screens*/
+@media { /*adjust grid to center content*/
   body .page-columns { 
-  grid-template-columns: [screen-start] 1.5em [screen-start-inset] 5fr [page-start] 50px [page-start-inset] minmax(50px, 150px) [body-start-outset] 50px [body-start] 1.5em [body-content-start] minmax(500px, calc(800px - 3em)) [body-content-end] 1.5em [body-end body-end-outset page-end-inset page-end] 5fr [screen-end-inset] 1.5em [screen-end];
+  grid-template-columns: [screen-start screen-start-inset body-start] 5fr [body-start-outset page-start-inset page-start body-content-start] minmax(min-content, calc(600px - 3em)) [body-content-end body-end body-end-outset page-end-inset page-end] 5fr [screen-end-inset screen-end];
 }
 }
 
-@media (min-width: 992px) { /*repeat for more specific body.floating class so that text doesn't spill over the right margin*/
+@media { /*repeat for more specific body.floating class so that text doesn't spill over the right margin*/
   body.floating .page-columns { 
-  grid-template-columns: [screen-start] 1.5em [screen-start-inset] 5fr [page-start] 50px [page-start-inset] minmax(50px, 150px) [body-start-outset] 50px [body-start] 1.5em [body-content-start] minmax(500px, calc(800px - 3em)) [body-content-end] 1.5em [body-end body-end-outset page-end-inset page-end] 5fr [screen-end-inset] 1.5em [screen-end];
+  grid-template-columns: [screen-start screen-start-inset body-start] 5fr [body-start-outset page-start-inset page-start body-content-start] minmax(min-content, calc(600px - 3em)) [body-content-end body-end body-end-outset page-end-inset page-end] 5fr [screen-end-inset screen-end];
+}
+}
+
+@media { /*repeat for more specific body.floating.fullcontent class so same grid pattern used on front page*/
+  body.floating.fullcontent .page-columns { 
+  grid-template-columns: [screen-start screen-start-inset body-start] 5fr [body-start-outset page-start-inset page-start body-content-start] minmax(min-content, calc(600px - 3em)) [body-content-end body-end body-end-outset page-end-inset page-end] 5fr [screen-end-inset screen-end];
 }
 }
 
