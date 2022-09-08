@@ -3,9 +3,15 @@ knitr:
   opts_chunk:
     echo: false
     message: false
+execute:
+  echo: false
 ---
 
 # Interactive Translation
+
+```{r init}
+source("init.R")
+```
 
 &nbsp;
 
@@ -13,7 +19,14 @@ Translators are always making choices for their audiences. Normally, these choic
 
 On this page, you decide.
 
+```{r}
+ojs_define(data = df_translations)
+```
 
+
+```{ojs}
+data
+```
 
 
 
