@@ -15,22 +15,24 @@ On this page, I offer my own traditional, static translation with notes. My tran
 
 ```{r}
 df_translations_mine <- df_translations %>% 
-    select(Line, `Roche-Mahdi (2007) OF Edition`, `My Translation`, Notes) %>%
+    
   mutate(
     #convert notes to margin notes (only when there is something in the Notes column, otherwise leave blank)
     Notes = case_when(
-      Notes != "" ~ margin_note(paste0(
+      Notes != "" ~ margin_note_custom(paste0(
         #paste the manicule to the margin note
         '<img src="materials/manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; margin-left: -10%" /> ',
                                        Notes),
         # icon = "&#9756;"
         #make the icon to expand the margin note when the window is narrow also a manicule
-        icon = '<img src="materials/manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; " />'
+        icon = '<img src="materials/manicule.png" style="height: 1.3em; vertical-align: bottom; display: inline-block; " />',
+        number_column = Line_all
         ),
       TRUE ~ ""
       ),
     #paste the margin notes to the last column
     `My Translation` = paste(`My Translation`, Notes)) %>% 
+  select(Line, `Roche-Mahdi (2007) OF Edition`, `My Translation`, Notes) %>%
   #remove notes column
   select(-Notes)
 

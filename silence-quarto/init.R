@@ -13,3 +13,33 @@ df_translations <- read_csv("materials/FREN 8510 McGrady Silence Translations - 
 
 df_translations_old <- df_translations %>% 
   select(Line, `Psaki (1991) Translation`, `Roche-Mahdi (2007) Translation`)
+
+
+
+## functions --------------
+
+
+##custom margin note wrangling function based on tufte::margin_note()
+# number_column is a column of the dataframe that contains some sort of line number (needed so that unique labels are created for each margin note, which is needed for toggling to work)
+margin_note_custom <- function (text, icon = "&#8853;", number_column) {
+  
+  marginnote_html_custom <- function (text = "", icon = "&#8853;") 
+  {
+    sprintf(paste0("<label for=\"tufte-mn-", {{number_column}}, 
+                   "\" class=\"margin-toggle\">%s</label>", 
+                   "<input type=\"checkbox\" id=\"tufte-mn-", {{number_column}}, 
+                   "\" class=\"margin-toggle\">%s"), 
+            icon, text)
+  }
+  
+  
+  if (is_html_output()) {
+    marginnote_html_custom(sprintf("<span class=\"marginnote\">%s</span>", 
+                            text), icon)
+  }  else {
+    warning("margin_note_custom() only works for HTML output", 
+            call. = FALSE)
+    text
+  }
+}
+
