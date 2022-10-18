@@ -1,0 +1,64 @@
+---
+knitr:
+  opts_chunk:
+    echo: false
+    message: false
+---
+
+# Comparing Psaki (1991) and Roche-Mahdi (2007)
+
+```{r init}
+source("init.R")
+```
+
+
+```{r setup, echo=FALSE, message=FALSE}
+# library(tufte)
+# library(tidyverse)
+# library(knitr)
+# 
+# 
+# knitr::opts_chunk$set(
+#   #hide all future R code chunks from output
+#   echo = FALSE,
+#   #hide all future messages
+#   message = FALSE)
+```
+
+
+Here, you can compare the previous verse translations of this passage by Regina Psaki and Sarah Roche-Mahdi. Florence Bouchet has also produced a complete translation of _Le Roman de Silence_ into Modern French (Bouchet 2000), but her translation has not been included here because it is written in prose. 
+
+Notice the different translation choices that Psaki and Roche-Mahdi make. For example when Nature addresses Silence, the language of the text is ambiguous enough that each translator can choose different pronouns and gendered terms to refer to Silence (see especially vv. 2500-2501, 2539, & 2542-2546). Psaki elaborates on her and Roche-Mahdi's translation styles in her article "Verse versus poetry: translating medieval narrative verse" (2007).
+
+
+```{r store_text}
+
+# df_translations <- read_csv("materials/FREN 8510 McGrady Silence Translations - Sheet1.csv", 
+#                             col_types = cols(.default = "c",
+#                                              Line = col_integer())) %>% 
+#   mutate(across(.cols = c(Line, `My Translation`, Notes), 
+#                 ~ifelse(is.na(.), "", .))) %>%
+#   rename(Line_all = Line) %>%
+#   mutate(Line = case_when((Line_all + 1 )%% 5 == 0 ~ as.character(Line_all),
+#                           TRUE ~ ""))
+
+```
+
+
+
+```{r}
+
+# df_translations_old <- df_translations %>% 
+#     select(Line, `Psaki (1991) Translation`, `Roche-Mahdi (2007) Translation`)
+
+kable(df_translations_old, 
+      # caption = "Here's a caption", 
+      #escape = FALSE needed so explicit HTML in table will render as HTML
+      escape = FALSE) %>% 
+  #setting column width--really only needed so that the same table style is applied here as on the next page. not sure why
+  kableExtra::column_spec(2, width = "6cm")
+
+
+```
+
+

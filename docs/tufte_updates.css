@@ -1,42 +1,146 @@
 /* Import ET Book styles
    adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
 
+/*
+WISHLIST:
+- fix size of dropdown menu when screen is narrow
+*/
+
+:root { /*create some variables*/
+  --manuscript-background-color: #fffff8;
+  --link-selection-color: #1964bf;
+  --border-color: #B6C5CD;
+  --body-width: 78%;
+  --p-width: 100%;
+}
+
 @charset "UTF-8";
 
-/* Tufte CSS styles */
-html { font-size: 15px; }
+/* attempting to alter quarto classes*/
 
-body { width: 87.5%;
+#quarto-sidebar { /*change background of sidebar, and set width to inherit the container's width*/
+  background-color: var(--manuscript-background-color);
+  width: inherit;
+}
+
+#quarto-document-content { /*change padding on main body of text, add vertical borders*/
+  padding-right: 14px;
+  padding-left: 14px;
+  border-width: 1px;
+  border-style: none solid;
+  border-color: var(--border-color);
+}
+
+.list-unstyled.mt-1 { /*change the width of the items in the sidebar*/
+  width: 100%;
+}
+
+li.sidebar-item { /* remove bottom padding in sidebar*/
+  padding-bottom: 0;
+}
+
+a:link.sidebar-item-text { /*remove line in background that looks like an underline in sidebar list items*/
+  background: none;
+  
+}
+
+a.sidebar-item-text.sidebar-link.active { /*remove coloring of link in sidebar for current page*/
+  color: inherit;
+  
+}
+
+a.sidebar-item-text.sidebar-link.active:hover { /*make active page link hover color the same as the others*/
+  color: var(--link-selection-color);
+  
+}
+
+h2, .h2 { /*remove underline for h2*/
+    border-bottom: none;
+}
+
+#quarto-header { /*fix collapsed header so it is the same width as the content and centered over the content*/
+  width: var(--body-width);
+  margin: auto;
+}
+
+#title-block-header.quarto-title-block.default .quarto-title-meta-heading { /*remove margin for now-empty title metadata element that used to contain "AUTHOR" label*/
+  margin-top: 0;
+}
+
+p.subtitle.lead { /*remove margin under subtitle*/
+  margin-bottom: 0;
+  width: 100%;
+}
+
+@media { /*adjust grid to center content*/
+  body .page-columns { 
+  grid-template-columns: [screen-start screen-start-inset body-start] 5fr [body-start-outset page-start-inset page-start body-content-start] minmax(min-content, calc(600px - 3em)) [body-content-end body-end body-end-outset page-end-inset page-end] 5fr [screen-end-inset screen-end];
+}
+}
+
+@media { /*repeat for more specific body.floating class so that text doesn't spill over the right margin*/
+  body.floating .page-columns { 
+  grid-template-columns: [screen-start screen-start-inset body-start] 5fr [body-start-outset page-start-inset page-start body-content-start] minmax(min-content, calc(600px - 3em)) [body-content-end body-end body-end-outset page-end-inset page-end] 5fr [screen-end-inset screen-end];
+}
+}
+
+@media { /*repeat for more specific body.floating.fullcontent class so same grid pattern used on front page*/
+  body.floating.fullcontent .page-columns { 
+  grid-template-columns: [screen-start screen-start-inset body-start] 5fr [body-start-outset page-start-inset page-start body-content-start] minmax(min-content, calc(600px - 3em)) [body-content-end body-end body-end-outset page-end-inset page-end] 5fr [screen-end-inset screen-end];
+}
+}
+
+.table { /*make table width match content width*/
+  width: var(--p-width);
+}
+
+tr {
+  border-color: var(--border-color);
+  border-width: 1px 0px;
+}
+
+
+.cell-output-display:not(.no-overflow-x) { /*allow margin notes to overflow the bounding box*/
+  overflow-x: visible;
+}
+
+.nav-page a:hover { /*set hover link color for navigation at bottom of page*/
+  color: var(--link-selection-color);
+}
+
+/* Tufte CSS styles */
+html { font-size: 12px; }
+
+body { width: var(--body-width);
        margin-left: auto;
        margin-right: auto;
-       padding-left: 12.5%;
        color: #111;
        max-width: 1400px;
        counter-reset: sidenote-counter; 
-       background-image: url(margin_image.jpg), url(margin_image.jpg);
-       background-position: left 0px top 0px, right 0px top 0px;
+       background-image: url(materials/margin_image.jpg), url(materials/margin_image.jpg);
+       background-position: left 0 top 0, right 0 top 0;
        background-repeat: repeat-y;
        background-attachment: fixed;
-       background-size: 11%;
+       background-size: 11%, 11% ;
 }
 
 h1.title { font-weight: 400;
      font-style: normal;
      margin-top: 4rem;
      margin-bottom: 1.5rem;
-     font-size: 3.2rem;
+     font-size: 2.8rem;
      line-height: 1; }
 
 h1 {
      font-weight: 400;
      margin-top: 2.1rem;
      margin-bottom: 0;
-     font-size: 2.2rem;
+     font-size: 1.7rem;
      line-height: 1; }
 
 h2 {
      font-weight: 400;
-     font-size: 1.7rem;
+     font-size: 1.3rem;
      margin-top: 2rem;
      margin-bottom: 0;
      line-height: 1; }
@@ -45,12 +149,12 @@ h3.subtitle {
              font-weight: 400;
              margin-top: 1rem;
              margin-bottom: 1rem;
-             font-size: 1.8rem;
+             font-size: 1.4rem;
              display: block;
              line-height: 1; }
 
 h4.author, h4.date {
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 400;
     margin: 1rem auto;
     line-height: 1;
@@ -64,9 +168,9 @@ article { position: relative;
 section { padding-top: 1rem;
           padding-bottom: 1rem; }
 
-p, ol, ul { font-size: 1.4rem; }
+p, ol, ul { font-size: 1rem; }
 
-p { line-height: 2rem;
+p { line-height: 1.5rem;
     margin-top: 1.4rem;
     margin-bottom: 1.4rem;
     padding-right: 0;
@@ -89,7 +193,7 @@ li { padding: 0.5rem 0; }
 table {
   border-top: 2px solid #111;
   border-bottom: 2px solid #111;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
 }
 
 th {
@@ -115,23 +219,33 @@ div.figure {
 /* Links: replicate underline that clears descenders */
 a:link, a:visited { color: inherit; }
 
-a:link { text-decoration: none;
-         background: -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#333, #333);
-         background: linear-gradient(#fffff8, #fffff8), linear-gradient(#fffff8, #fffff8), linear-gradient(#333, #333);
+
+
+a:link { 
+  text-decoration: none;
+          /*comment out the background here to remove the line that appears under links*/
+         background: -webkit-linear-gradient(var(--manuscript-background-color), var(--manuscript-background-color)), -webkit-linear-gradient(var(--manuscript-background-color), var(--manuscript-background-color)), -webkit-linear-gradient(#333, #333);
+         background: linear-gradient(var(--manuscript-background-color), var(--manuscript-background-color)), linear-gradient(var(--manuscript-background-color), var(--manuscript-background-color)), linear-gradient(#333, #333);
          -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
          -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
          background-size: 0.05em 1px, 0.05em 1px, 1px 1px;
          background-repeat: no-repeat, no-repeat, repeat-x;
-         text-shadow: 0.03em 0 #fffff8, -0.03em 0 #fffff8, 0 0.03em #fffff8, 0 -0.03em #fffff8, 0.06em 0 #fffff8, -0.06em 0 #fffff8, 0.09em 0 #fffff8, -0.09em 0 #fffff8, 0.12em 0 #fffff8, -0.12em 0 #fffff8, 0.15em 0 #fffff8, -0.15em 0 #fffff8;
+         text-shadow: 0.03em 0 var(--manuscript-background-color), -0.03em 0 var(--manuscript-background-color), 0 0.03em var(--manuscript-background-color), 0 -0.03em var(--manuscript-background-color), 0.06em 0 var(--manuscript-background-color), -0.06em 0 var(--manuscript-background-color), 0.09em 0 var(--manuscript-background-color), -0.09em 0 var(--manuscript-background-color), 0.12em 0 var(--manuscript-background-color), -0.12em 0 var(--manuscript-background-color), 0.15em 0 var(--manuscript-background-color), -0.15em 0 var(--manuscript-background-color);
          background-position: 0% 93%, 100% 93%, 0% 93%; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) { a:link { background-position-y: 87%, 87%, 87%; } }
 
-a:link::selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-                    background: #b4d5fe; }
+a:link::selection { text-shadow: 0.03em 0 var(--link-selection-color), -0.03em 0 var(--link-selection-color), 0 0.03em var(--link-selection-color), 0 -0.03em var(--link-selection-color), 0.06em 0 var(--link-selection-color), -0.06em 0 var(--link-selection-color), 0.09em 0 var(--link-selection-color), -0.09em 0 var(--link-selection-color), 0.12em 0 var(--link-selection-color), -0.12em 0 var(--link-selection-color), 0.15em 0 var(--link-selection-color), -0.15em 0 var(--link-selection-color);
+                    background: var(--link-selection-color); }
 
-a:link::-moz-selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;
-                         background: #b4d5fe; }
+a:link::-moz-selection { text-shadow: 0.03em 0 var(--link-selection-color), -0.03em 0 var(--link-selection-color), 0 0.03em var(--link-selection-color), 0 -0.03em var(--link-selection-color), 0.06em 0 var(--link-selection-color), -0.06em 0 var(--link-selection-color), 0.09em 0 var(--link-selection-color), -0.09em 0 var(--link-selection-color), 0.12em 0 var(--link-selection-color), -0.12em 0 var(--link-selection-color), 0.15em 0 var(--link-selection-color), -0.15em 0 var(--link-selection-color);
+                         background: var(--link-selection-color); }
+                         
+a:hover { /*set hover link color*/
+  color: var(--link-selection-color);
+}
+
+
 
 /* Sidenotes, margin notes, figures, captions */
 img {max-width: 100%;}
@@ -140,11 +254,12 @@ img {max-width: 100%;}
 
 .sidenote, .marginnote { float: right;
                          clear: right;
-                         margin-right: -80%;
+                         margin-right: calc(var(--body-width) * -1);
+                         padding-left: 5%;
                          width: 70%;
                          margin-top: 0;
                          margin-bottom: 1rem;
-                         font-size: 1.1rem;
+                         font-size: 0.8rem;
                          line-height: 1.3;
                          vertical-align: baseline;
                          position: relative; }
@@ -157,7 +272,7 @@ img {max-width: 100%;}
                          top: -0.5rem;
                          left: 0.1rem; }
 
-p, footer, table, hr { width: 55%; }
+p, footer, table, hr { width: var(--p-width); }
 hr { margin-left: 0; }
 table table, li p, li pre { width: auto; }
 li p, li pre {margin-top: auto; }
@@ -212,7 +327,7 @@ label.sidenote-number { display: inline; }
 
 label.margin-toggle:not(.sidenote-number) { display: none; }
 
-@media (max-width: 760px) { label.margin-toggle:not(.sidenote-number) { display: inline; }
+@media (max-width: 1194px) { label.margin-toggle:not(.sidenote-number) { display: inline; }
                             .sidenote, .marginnote { display: none; }
                             .shownote,
                             .margin-toggle:checked + .sidenote,
@@ -236,4 +351,50 @@ iframe {
   border: 0;
   
 }
+
+
+/* tufte-fonts.css */
+
+@font-face {
+  font-family: "et-book";
+  src: url("et-book/roman-line-figures.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal
+}
+
+@font-face {
+  font-family: "et-book";
+  src: url("et-book/display-italic-old-style-figures.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic
+}
+
+@font-face {
+  font-family: "et-book";
+  src: url("et-book/bold-line-figures.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal
+}
+
+@font-face {
+  font-family: "et-book-roman-old-style";
+  src: url("et-book/roman-old-style-figures.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body { font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif; }
+.numeral, .sidenote-number { font-family: et-book-roman-old-style; }
+
+
+/* tufte-background.css */
+
+body {
+  background-color: var(--manuscript-background-color);
+}
+
+
+/* tufte-italics.css */
+
+h1, h2, h3.subtitle { font-style: italic; }
 

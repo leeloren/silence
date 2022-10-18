@@ -1,0 +1,95 @@
+---
+knitr:
+  opts_chunk:
+    echo: false
+    message: false
+execute:
+  echo: false
+---
+
+# Interactive Translation
+
+```{r init}
+source("init.R")
+```
+
+&nbsp;
+
+Translators are always making choices for their audiences. Normally, these choices are made invisible to facilitate a smoother reading experience, but this practice can give readers the false impression that what they are enjoying is an unmediated "true" expression of the original text. By allowing readers to make translation choices themselves, the complexity and playfulness of texts like _Le Roman de Silence_ may be more fully appreciated.
+
+On this page, you decide.
+
+<!-- Define data. -->
+
+<!-- ```{r pass_data} -->
+<!-- ojs_define(data = df_translations) -->
+<!-- ``` -->
+
+<!-- Print data -->
+
+<!-- ```{ojs} -->
+<!-- //data //full data -->
+<!-- Object.keys(data); //names of all properties -->
+<!-- mykeys = ["Line", -->
+<!--           "Roche-Mahdi (2007) OF Edition" -->
+<!--           ]; //names of properties to select -->
+
+<!-- //create object that contains only properties wanted -->
+<!-- //https://stackoverflow.com/a/56592365/7694963 -->
+<!-- subset = Object.fromEntries( -->
+<!--   mykeys -->
+<!--   .filter(key => key in data) // line can be removed to make it inclusive -->
+<!--   .map(key => [key, data[key]]) -->
+<!-- ); -->
+
+<!-- subset //print data -->
+
+<!-- ``` -->
+
+
+<!-- ```{ojs filter_data} -->
+<!-- data_filtered = transpose(subset) -->
+<!-- ``` -->
+
+<!-- Is this a button? -->
+
+<!-- ```{ojs button} -->
+<!-- //viewof translationselected = Inputs.radio(["Meaning", "Syntax", "Sound"], {label: "What do you want to prioritize in the translation?", value: "Meaning"}) -->
+
+<!-- viewof translationselected = Inputs.radio(["My Translation", "Word Order Priority Translation", "Sound Priority Translation"], {label: "What do you want to prioritize in the translation?", value: "My Translation"}) -->
+
+<!-- //add correct translation to keys -->
+<!-- //{ -->
+<!-- //  if (translationselected == "Meaning") { -->
+<!-- //    mykeys.push("My Translation") -->
+<!-- //  } else if (translationselected == "Syntax") { -->
+<!-- //    mykeys.push("Word Order Priority Translation") -->
+<!-- //  } else if (translationselected == "Sound") { -->
+<!-- //    mykeys.push("Sound Priority Translation") -->
+<!-- //  } -->
+<!-- //} -->
+
+<!-- translationselected -->
+
+<!-- mykeys.push(translationselected) -->
+
+<!-- mykeys -->
+
+
+<!-- ``` -->
+
+
+
+<!-- Does this become a table? -->
+
+
+<!-- ```{ojs print_table} -->
+<!-- Inputs.table(data_filtered) -->
+<!-- ``` -->
+
+
+```{r}
+knitr::include_app("https://lindsayevanslee.shinyapps.io/silence-app/",
+  height = "600px")
+```
+
