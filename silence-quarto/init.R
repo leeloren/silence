@@ -5,11 +5,19 @@ library(knitr)
 df_translations <- read_csv("materials/FREN 8510 McGrady Silence Translations - Sheet1.csv", 
                             col_types = cols(.default = "c",
                                              Line = col_integer())) %>% 
-  mutate(across(.cols = c(Line, `My Translation`, Notes), 
+  #convert NAs to empty strings
+  mutate(across(.cols = c(Line, `My Translation`, Notes, `Sound Priority Translation Notes`), 
                 ~ifelse(is.na(.), "", .))) %>%
+  #fill in Word Order Priority Translation with My Translation
+  mutate(`Word Order Priority Translation` = case_when(
+    is.na(`Word Order Priority Translation`) ~ `My Translation`,
+    TRUE ~ `Word Order Priority Translation`
+  )) %>% 
+  #create line number column with number every 5 lines
   rename(Line_all = Line) %>%
   mutate(Line = case_when((Line_all + 1 )%% 5 == 0 ~ as.character(Line_all),
                           TRUE ~ ""))
+
 
 df_translations_old <- df_translations %>% 
   select(Line, `Psaki (1991) Translation`, `Roche-Mahdi (2007) Translation`)
