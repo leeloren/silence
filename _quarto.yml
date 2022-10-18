@@ -4,7 +4,7 @@ project:
 
 book:
   title: "Digital edition of _Le Roman de Silence_ (verses 2439-2688)"
-  subtitle: "Last updated: 2022-09-07"
+  subtitle: "Last updated: 2022-10-18"
   #subtitle: "Last updated: `r Sys.Date()` # inline R code doesn't work yet (see https://github.com/quarto-dev/quarto-cli/discussions/606)"
   author: "Loren Lee"
   reader-mode: false
