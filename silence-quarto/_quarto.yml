@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Digital edition of _Le Roman de Silence_ (verses 2439-2688)"
