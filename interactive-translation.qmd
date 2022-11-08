@@ -19,6 +19,20 @@ Translators are always making choices for their audiences. Normally, these choic
 
 On this page, you decide.
 
+
+<!-- ```{r} -->
+<!-- kable(df_translations %>% select(Line, `Roche-Mahdi (2007) OF Edition`, `My Translation w/ notes`) %>% slice_head(n = 10),  -->
+<!--       # caption = "Here's a caption",  -->
+<!--       #escape = FALSE needed so explicit HTML in table will render as HTML -->
+<!--       escape = FALSE) %>%  -->
+<!--   kableExtra::column_spec(2, width = "6cm") -->
+
+<!-- ``` -->
+
+
+
+
+
 ```{r pass_data}
 #make data from R available to ojs
 ojs_define(data = df_translations)
@@ -45,15 +59,16 @@ subset = Object.fromEntries(
 //transpose data with selected columns
 data_filtered = transpose(subset)
 
+
 ```
 
 
 ```{ojs button}
 //options for radio button
 opts = [
-    {alias: "Meaning", colname: "My Translation"},
-    {alias: "Syntax", colname: "Word Order Priority Translation"},
-    {alias: "Sound", colname: "Sound Priority Translation"}
+    {alias: "Meaning", colname: "My Translation w/ notes"},
+    {alias: "Syntax", colname: "Word Order Priority Translation w/ notes"},
+    {alias: "Sound", colname: "Sound Priority Translation w/ notes"}
   ]
 
 //create radio button
@@ -78,9 +93,41 @@ newkeys = {
 ```
 
 
-```{ojs print_table}
-Inputs.table(data_filtered)
+```{ojs test_table}
+//TODO: figure out how to store this function in a separate file
+
+// Function to render a table
+html_table = options => html`<table>
+  <thead>
+    <tr>${Object.keys(options[0]).map((d, i) => {
+      let label = d;
+      return `<th>${label}</th>`;
+    })}
+  </tr>
+  </thead>
+  <tbody>
+    ${options
+      <!-- .filter((d, i) => i < 10) -->
+      .map(row => {
+        return html`<tr>${Object.values(row).map(col => {
+          return `<td>${col}</td>`;
+        })}</tr>`;
+      })}
+  </tbody>
+  </table>
+`
+
+html_table(data_filtered)
+
+
 ```
+
+
+
+<!-- ```{ojs print_table} -->
+<!-- Inputs.table(data_filtered) -->
+<!-- ``` -->
+
 
 
 <!-- ```{r} -->
