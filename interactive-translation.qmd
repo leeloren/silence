@@ -35,7 +35,16 @@ On this page, you decide.
 
 ```{r pass_data}
 #make data from R available to ojs
-ojs_define(data = df_translations)
+ojs_define(data = df_translations %>% 
+             select(Line, 
+                    Line_all, 
+                    `Roche-Mahdi (2007) OF Edition`,
+                    `My Translation w/ notes`, 
+                    `Word Order Priority Translation w/ notes`,
+                    `Sound Priority Translation w/ notes`) %>% 
+             rename(`Meaning Priority Translation` = `My Translation w/ notes`, 
+                    `Word Order Priority Translation` = `Word Order Priority Translation w/ notes`,
+                    `Sound Priority Translation` = `Sound Priority Translation w/ notes`))
 ```
 
 ```{ojs filter_data}
@@ -66,9 +75,9 @@ data_filtered = transpose(subset)
 ```{ojs button}
 //options for radio button
 opts = [
-    {alias: "Meaning", colname: "My Translation w/ notes"},
-    {alias: "Syntax", colname: "Word Order Priority Translation w/ notes"},
-    {alias: "Sound", colname: "Sound Priority Translation w/ notes"}
+    {alias: "Meaning", colname: "Meaning Priority Translation"},
+    {alias: "Syntax", colname: "Word Order Priority Translation"},
+    {alias: "Sound", colname: "Sound Priority Translation"}
   ]
 
 //create radio button
@@ -109,9 +118,15 @@ html_table = options => html`<table>
     ${options
       <!-- .filter((d, i) => i < 10) -->
       .map(row => {
-        return html`<tr>${Object.values(row).map(col => {
-          return `<td>${col}</td>`;
-        })}</tr>`;
+        return html`<tr>${
+        Object.values(row)
+        .map(function(element, index, array){
+                    if (index == 1){
+                        return `<td style="width: 6cm;">${element}</td>`;
+                    } else {
+                        return `<td>${element}</td>`;
+                    }
+                })}</tr>`;
       })}
   </tbody>
   </table>
